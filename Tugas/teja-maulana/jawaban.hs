@@ -141,7 +141,7 @@ myMax x y = if x > y then x else y
 
 --pembatas
 
-min' x = x
+myMin x s = if x < s then x else s
 
 --pembatas
 
