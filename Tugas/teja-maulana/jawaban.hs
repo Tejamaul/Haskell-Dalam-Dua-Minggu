@@ -145,11 +145,14 @@ myMin x s = if x < s then x else s
 
 --pembatas
 
-concat' x = x
+myConcat [] = []
+myConcat (x:xs) = x ++ myConcat xs
 
 --pembatas
 
-intersperse' x = x
+myIntersperse _ [] = []
+myIntersperse _ [x] = [x]
+myIntersperse m (x:xs) = x : m : (myIntersperse m xs)
 
 --pembatas
 
@@ -157,7 +160,10 @@ intercalate' x = x
 
 --pembatas
 
-and' x = x
+myAnd [] = True
+myAnd (x:xs)
+    | x == False = False
+    | otherwise = myAnd xs
 
 --pembatas
 
