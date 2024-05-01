@@ -156,8 +156,9 @@ myIntersperse m (x:xs) = x : m : (myIntersperse m xs)
 
 --pembatas
 
-intercalate' x = x
-
+myIntercalate m [] = []
+myIntercalate m [x] = x
+myIntercalate m (x:xs)= x ++ m ++ (myIntercalate m xs)
 --pembatas
 
 myAnd [] = True
@@ -167,7 +168,10 @@ myAnd (x:xs)
 
 --pembatas
 
-or' x = x
+myOr [] = False
+myOr (x:xs)
+    | x == True = True
+    | otherwise = myOr xs
 
 --pembatas
 
