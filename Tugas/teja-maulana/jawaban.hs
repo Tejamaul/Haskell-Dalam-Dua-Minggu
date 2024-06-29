@@ -175,7 +175,10 @@ myOr (x:xs)
 
 --pembatas
 
-zip3' x = x
+myZip3 [] _ _ = []
+myZip3 _ [] _ = []
+myZip3 _ _ [] = []
+myZip3 (x:xs) (y:ys) (m:ms) =(x, y, m) : myZip3 xs ys ms
 
 --pembatas
 
